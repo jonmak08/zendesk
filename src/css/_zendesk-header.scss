@@ -1,0 +1,43 @@
+.header {
+	.analytics-cloud-logo {
+		height: 2.5rem;
+		padding-right: $header-spacer-x;
+		vertical-align: middle;
+		width: 2.5rem;
+	}
+
+	.help-center-detail {
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
+	}
+
+	.search-form {
+		.search {
+			input[type="submit"] {
+				display: none;
+			}
+
+			input:not([type="submit"]) {
+				padding: $input-padding-y;
+			}
+		}
+	}
+
+	.site-name {
+		display: inline-block;
+		padding-left: $header-spacer-x;
+	}
+
+	.user {
+		#user #user-name,
+		.dropdown-toggle:after {
+			display: none;
+		}
+
+		.user-avatar {
+			border-radius: 50%;
+			max-height: 2rem;
+		}
+	}
+}
