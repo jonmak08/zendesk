@@ -7,6 +7,10 @@
 	top: 0;
 	z-index: 1;
 
+	&.scroll-shadow {
+		box-shadow: 0 15px 30px -15px rgba(9, 16, 29, 0.07);
+	}
+
 	.header-content {
 		align-items: center;
 		display: flex;
@@ -179,7 +183,7 @@
 				color: $color-body;
   
 				.header-menu {
-					box-shadow: 0 4px 15px 0 rgba(9, 16, 24, 0.03), 0 20px 40px 0 rgba(9, 16, 29, 0.09);
+					box-shadow: 0 4px 15px 0 rgba(9, 16, 24, 0.03), 0 32px 40px 0 rgba(9, 16, 29, 0.06);
 					display: block;
 				}
 			}
