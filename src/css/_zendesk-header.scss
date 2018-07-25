@@ -7,8 +7,8 @@
 	top: 0;
 	z-index: 1;
 
-	.header-inner {
-		justify-content: space-between;
+	&.scroll-shadow {
+		box-shadow: 0 15px 30px -15px rgba(9, 16, 29, 0.07);
 	}
 
 	.header-content {
@@ -20,13 +20,13 @@
 			justify-content: flex-end;
 		}
 
-		.analytics-cloud-link {
+		.header-link {
 			display: block;
 			height: 2.5rem;
 			padding-right: 0.5rem;
 			width: 2.5rem;
 
-			.analytics-cloud-logo {
+			.header-logo {
 				height: 100%;
 				width: 100%;
 			}
@@ -35,17 +35,163 @@
 		.site-name {
 			color: $color-default;
 			margin: 0;
+		}
+	}
 
-			span {
-				font-weight: $font-weight-light;
+	.header-inner {
+		justify-content: space-between;
+	}
 
-				@include media-breakpoint-down(md) {
-					display: none;
+	.header-menu {
+		background-color: $color-white;
+		border-top: 1px solid $color-divider;
+		display: none;
+		left: 0;
+		min-height: 432px;
+		position: fixed;
+		top: $navbar-height;
+		width: 100%;
+	
+		.header-menu-content {
+			padding: 3rem 0;
+			
+			.card-menu {
+				display: flex;
+				flex-wrap: wrap;
+
+				.nav-card {
+					padding: 1.25rem $padding-default 1rem;
+					margin-bottom: 0.25rem;
+	
+					&:hover {
+						background-color: $color-grey;
+						color: $secondary-text-color;
+						text-decoration: none;
+					}
+				}
+			}
+			.card-menu-container {
+				margin: 0 auto;
+				width: 60%;
+			}
+
+			.menu-body {
+				display: flex;
+
+				h6 {
+					margin-top: 2rem;
+					text-orientation: sideways;
+					writing-mode: vertical-rl;
 				}
 			}
 
-			@include media-breakpoint-down(sm) {
-				display: none;
+			.submenu {
+				border-left: 1px solid $color-divider;
+
+				&.language-selection {
+					padding: 0 2rem;
+
+					svg {
+						height: 2.5rem;
+						width: 2.5rem;
+					}
+					
+					.available-languages {
+						padding: 0 1rem;
+
+						a {
+							color: $secondary-text-color;
+							display: block;
+							padding: 0.5rem 0;
+						}
+
+						.current {
+							color: $color-default;
+						}
+					}
+				}
+
+				.account-links {
+					padding: $padding-default 1rem 2.5rem;  
+
+					.nav-card {
+						padding: $padding-small $padding-default;
+	
+						.title {
+							font-weight: $font-weight-normal;
+						}
+					}
+				}
+				
+				.highlighted {
+					padding: 0 1rem;
+
+					svg {
+						background-color: $color-grey;
+						border-radius: 50%;
+						margin: 1rem;
+					}
+					
+					.title {
+						color: $color-primary;		
+					}
+				}
+
+				.language {
+					padding: 0 $padding-default;
+
+					.nav-card {
+						padding: 1rem;
+
+						svg {
+							width: 0.875rem;
+						}
+	
+						.title {
+							color: $secondary-text-color;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.header-menu-list {
+		justify-content: center;
+
+		h5 {
+			font-weight: $font-weight-normal;
+			margin-bottom: 0;
+		}
+
+		.list-item {
+			padding: 1.375rem 1rem;
+			position: relative;
+
+			&:after {
+				border-bottom: 2px solid $color-primary-focus;
+				content: "";
+				left: 50%;
+				position: absolute;
+				right: 50%;
+				top: calc(100% - 2px);
+				transition: all 0.3s ease;
+			  }
+		
+			&:hover {
+				cursor: pointer;
+				color: $color-body;
+  
+				.header-menu {
+					box-shadow: 0 4px 15px 0 rgba(9, 16, 24, 0.03), 0 32px 40px 0 rgba(9, 16, 29, 0.06);
+					display: block;
+				}
+			}
+
+			&:hover:after {
+				left: 0;
+				right: 0;
+				transition: all 0.3s ease;
 			}
 		}
 	}

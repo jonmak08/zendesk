@@ -32,6 +32,7 @@
 		"eslint-plugin-prettier": "^2.6.0",
 		"glob-all": "^3.1.0",
 		"imagemin-webpack-plugin": "^2.1.5",
+		"lodash.throttle": "^4.1.1",
 		"mini-css-extract-plugin": "^0.4.0",
 		"node-sass": "^4.9.0",
 		"optimize-css-assets-webpack-plugin": "^4.0.1",
@@ -82,6 +83,7 @@
 	"prettier": {
 		"bracketSpacing": false,
 		"singleQuote": true,
+		"tabWidth": 4,
 		"useTabs": true
 	},
 	"private": true,
@@ -89,7 +91,7 @@
 		"build": "webpack --config webpack.prod.js",
 		"build:dev": "webpack --mode=development --config webpack.common.js --watch",
 		"format": "prettier --write 'src/js/**/*.js'",
-		"zip": "zip -r Custom.zip dist -x *.zat*"
+		"zip": "zip -r Liferay-Help-Center.zip dist -x *.zat*"
 	},
 	"version": "1.0.1"
 }
