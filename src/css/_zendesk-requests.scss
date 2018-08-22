@@ -4,6 +4,11 @@
 	display: none;
 }
 
+#request_organization_id:disabled {
+	color: $color-default-disabled;
+	cursor: not-allowed;
+}
+
 .attachment-meta {
 	padding-left: $lexicon-icon-width;
 }
