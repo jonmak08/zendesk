@@ -7,8 +7,10 @@
 		padding: 0;
 
 		.article-list-item {
+			border-bottom: 1px solid $color-border;
 			list-style: none;
-			padding-bottom: $padding-default;
+			margin-bottom: 1rem;
+			padding-bottom: 1rem;
 		}
 	}
 
@@ -17,7 +19,7 @@
 	}
 
 	.section {
-		margin-bottom: 3rem;
+		margin-bottom: $margin-default;
 	}
 
 	.section-name {
