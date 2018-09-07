@@ -69,22 +69,16 @@ Array.prototype.subtract = function(arr) {
 // filter user tags to obtain IDs of tags with the osb_[id]_watcher suffix
 
 function getUserWatcherTags(userTags) {
-	var retVal = [];
-
-	if (!userTags.includes('osb_partner')) {
-		retVal = userTags.filter(
-			function(tag) {
-				return tag.match(/osb_(\d*)_watcher/);
-			}
-		)
-		.map(
-			function(tag) {
-				return tag.split('_')[1];
-			}
-		);
-	}
-
-	return retVal;
+	return userTags.filter(
+		function(tag) {
+			return tag.match(/osb_(\d*)_watcher/);
+		}
+	)
+	.map(
+		function(tag) {
+			return tag.split('_')[1];
+		}
+	);
 }
 
 // obtain dev orgs for current user
