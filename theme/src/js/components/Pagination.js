@@ -104,16 +104,16 @@ class Pagination extends preact.Component {
 		return pages;
 	}
 
-	handleClick(page) {
+	handleClick(activePage) {
 		const {onClick} = this.props;
 
 		this.setState(
 			{
-				currentPage: page
+				currentPage: activePage
 			}
 		)
 
-		onClick(page);
+		onClick(activePage);
 	}
 
 	setBuffers() {
